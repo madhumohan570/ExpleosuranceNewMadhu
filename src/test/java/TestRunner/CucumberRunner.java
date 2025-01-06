@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		tags="@RegisterNewAccount", 
+		tags="@LoginStep", 
         features= {"src/test/resources/Features"},
         glue= {"StepDefinitions"}, 
         plugin= {"pretty"})
