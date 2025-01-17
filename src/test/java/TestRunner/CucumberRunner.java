@@ -4,10 +4,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		tags="@RegisterNewAccount", 
-        features= {"src/test/resources/Features"},
-        glue= {"StepDefinitions"}, 
-        plugin= {"pretty"})
+	 
+        features = {"src/test/resources/Features/steps.feature"},
+        glue= {"StepDefinitions"}, tags = "@LoginStep",  
+        plugin= {"pretty", "html:ExpleoInsuranceDemo/target/cucumber-reports.html", 
+        		"json:ExpleoInsuranceDemo/target/cucumber-reports.json"})
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 

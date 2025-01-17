@@ -30,7 +30,7 @@ public class ExpleoInsurance {
 		public void user_enters_valid_email_and_password() {
 		
 		    
-		  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("kavyasri@gmail.com");
+		  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("swetha@gmail.com");
 		  driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("July@@@@@@0507");
 			
 		}
@@ -64,15 +64,15 @@ public class ExpleoInsurance {
 		
 		@And("User provides the details of new user")
 		public void user_provides_the_details_of_new_user() {
-			driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Pradeep");
-			driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("R");
-			driver.findElement(By.xpath("//input[@id='email']")).sendKeys("pradeep@gmail.com");
+			//driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Pradeepkumar");
+			//driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("R");
+			driver.findElement(By.xpath("//input[@id='email']")).sendKeys("renuka@gmail.com");
 			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("July@@@@@@0507");
 			driver.findElement(By.xpath("//input[@id='confirmPassword']")).sendKeys("July@@@@@@0507");
-			driver.findElement(By.xpath("//input[@id='startDate']")).sendKeys("01112024");
-			driver.findElement(By.xpath("//input[@id='endDate']")).sendKeys("30122024");
-			driver.findElement(By.xpath("//input[@id='address']")).sendKeys("acd street, VVVV");
-			driver.findElement(By.xpath("//input[@id='phoneNumber']")).sendKeys("9876943212");
+			//driver.findElement(By.xpath("//input[@id='startDate']")).sendKeys("01112024");
+			//driver.findElement(By.xpath("//input[@id='endDate']")).sendKeys("30112024");
+			//driver.findElement(By.xpath("//input[@id='address']")).sendKeys("acd street, VVVV");
+			//driver.findElement(By.xpath("//input[@id='phoneNumber']")).sendKeys("9896943212");
 			driver.findElement(By.xpath("//button[contains(text(),\"Register\")]")).click();
 			
 		}
@@ -91,18 +91,25 @@ public class ExpleoInsurance {
 		@And("User is applying for a new insurance")
 		public void user_is_applying_for_a_new_insurance() {
 			driver.findElement(By.xpath("//a[contains(text(),\"New Insurance\")]")).click();
-			driver.findElement(By.xpath("//input[@id='Name']")).sendKeys("Karthik");
-			driver.findElement(By.xpath("//input[@id='email']")).sendKeys("karthik@gmail.com");
+			driver.findElement(By.xpath("//input[@id='Name']")).sendKeys("Harini");
+			driver.findElement(By.xpath("//input[@id='email']")).sendKeys("harini@gmail.com");
 			driver.findElement(By.xpath("//input[@id='Address']")).sendKeys("abc street, ZZZZ");
 			driver.findElement(By.xpath("//input[@id='DateOfBirth']")).sendKeys("02112000");
 			//driver.findElement(By.xpath("//input[@value=\"Male\"]")).click();
 			driver.findElement(By.xpath("//input[@value=\"Female\"]")).click();
-			//driver.findElement(By.xpath("//input[@value="Health Insurance "]")).click();
-			//driver.findElement(By.xpath("//input[@value="Life Insurance "]")).click();
-			driver.findElement(By.xpath("//input[@value=\"Vehicle Insurance \"]")).click();
+			driver.findElement(By.xpath("//option[contains(text(),\"-- Policy Type --\")]")).click();
+			//driver.findElement(By.xpath("//option[@value="Health"]")).click();
+			//driver.findElement(By.xpath("//option[@value="Life"]")).click();
+			driver.findElement(By.xpath("//option[@value=\"Vehicle\"]")).click();
+			driver.findElement(By.xpath("//select[@name=\"coverage\"]")).click();
+			driver.findElement(By.xpath("//option[@value=\"Third-Party Liability\"]")).click();
+			//driver.findElement(By.xpath("//option[@value=\"Comprehensive\"]")).click();
+			//driver.findElement(By.xpath("//option[@value=\"Personal Vehicle Damage\"]")).click();
 			driver.findElement(By.xpath("//select[@name=\"SumInsured\"]")).click();
 			driver.findElement(By.xpath("//option[contains(text(),\"1,00,000\")]")).click();
 			driver.findElement(By.xpath("//input[@id='Premium']")).sendKeys("2000");
+			//driver.findElement(By.xpath("//input[@value=\"Yes\"]")).click();
+			driver.findElement(By.xpath("//input[@value=\"No\"]")).click();
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			
 			
@@ -120,10 +127,43 @@ public class ExpleoInsurance {
 		@When("User changes the password")
 		public void user_changes_the_password() {
 			driver.findElement(By.xpath("//h4[contains(text(),\"Forgot password ?\")]")).click();
-			driver.findElement(By.xpath("//input[@type='email']")).sendKeys("kavyasri@gmail.com");
+			driver.findElement(By.xpath("//input[@type='email']")).sendKeys("swetha@gmail.com");
 			driver.findElement(By.xpath("//input[@placeholder=\"Enter your new password\"]")).sendKeys("July@@@@@@0507");
 			driver.findElement(By.xpath("//input[@placeholder=\"Confirm your new password\"]")).sendKeys("July@@@@@@0507");
 			driver.findElement(By.xpath("//button[contains(text(),\"Reset Password\")]")).click();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		}
+		
+		//Payment Page
+		
+		@And("User is navigating to payment page to proceed the payment")
+		public void user_is_navigating_to_payment_page_to_proceed_the_payment() {
+			driver.findElement(By.xpath("//a[contains(text(),\"Payment Page\")]")).click();
+			driver.findElement(By.xpath("//input[@placeholder='Policy Amount']")).sendKeys("100000");
+			driver.findElement(By.xpath("//button[contains(text(),\"Calculate Premium\")]")).click();
+			driver.findElement(By.xpath("//button[contains(text(),\"Proceed to Pay\")]")).click();
+			
+		} 
+		
+		@Then("User gets the payment processing popup message")
+		public void user_gets_the_payment_processing_popup_message() {
+			driver.switchTo().alert().accept();
+			
+		}
+		
+		//Claims Management
+		
+		@And("User is navigating to claims management page")
+		public void user_is_navigating_to_claims_management_page() {
+			driver.findElement(By.xpath("//a[contains(text(),\"Claims Management\")]")).click();
+			
+		}
+		
+		@Then("User views the claim list")
+		public void user_views_the_claim_list() {
+			Assert.assertTrue(driver.findElements(By.xpath("//h3[contains(text(),\"Claims List\")]")).size()>0, "User is able to view the claims list");
+			
+			
+		}
+		
 }
