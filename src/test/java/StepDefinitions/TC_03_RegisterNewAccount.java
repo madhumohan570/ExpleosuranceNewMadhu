@@ -77,6 +77,7 @@ public class TC_03_RegisterNewAccount {
 	@Then("User is navigated to dashboard page")
 	public void user_is_navigated_to_dashboard_page() {
 		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		Assert.assertTrue(driver.findElements(By.xpath("//a[contains(text(),\"Dashboard\")]")).size()>0, "User is navigated to Dashboard");
 		
 	}
