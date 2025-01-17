@@ -6,8 +6,11 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 
 	 
-        features = {"src/test/resources/Features/steps.feature"},
-        glue= {"StepDefinitions"}, tags = "@LoginStep",
+        features = {"src/test/resources/Features"},
+        glue= {"StepDefinitions"}, 
+        tags = "@AllScenarios", 
+        //dryRun = true, 
+        monochrome = true,
         plugin = {"pretty", "json:target/cucumber.json",
 		"html:target/htmlreport.html"})
         
