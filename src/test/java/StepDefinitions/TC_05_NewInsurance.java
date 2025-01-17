@@ -54,8 +54,8 @@ public class TC_05_NewInsurance {
 	@And("User is applying for a new insurance")
 	public void user_is_applying_for_a_new_insurance() {
 		driver.findElement(By.xpath("//a[contains(text(),\"New Insurance\")]")).click();
-		driver.findElement(By.xpath("//input[@id='Name']")).sendKeys("ram");
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("ram@gmail.com");
+		driver.findElement(By.xpath("//input[@id='Name']")).sendKeys("ram1");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("ram1@gmail.com");
 		driver.findElement(By.xpath("//input[@id='Address']")).sendKeys("abc street, ZZZZ");
 		driver.findElement(By.xpath("//input[@id='DateOfBirth']")).sendKeys("02112000");
 		//driver.findElement(By.xpath("//input[@value=\"Male\"]")).click();

@@ -38,7 +38,7 @@ public class TC_03_RegisterNewAccount {
 	public void user_provides_the_details_of_new_user() {
 		//driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Pradeepkumar");
 		//driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("R");
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Ramesh@gmail.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Ramesh1@gmail.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("July@@@@@@0507");
 		driver.findElement(By.xpath("//input[@id='confirmPassword']")).sendKeys("July@@@@@@0507");
 		//driver.findElement(By.xpath("//input[@id='startDate']")).sendKeys("01112024");
@@ -62,7 +62,7 @@ public class TC_03_RegisterNewAccount {
 	public void user_enters_email_and_password() {
 	
 	    
-	  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("ramesh@gmail.com");
+	  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("ramesh1@gmail.com");
 	  driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("July@@@@@@0507");
 		
 	}
