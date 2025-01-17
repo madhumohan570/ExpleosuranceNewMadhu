@@ -6,9 +6,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 
 	 
-        features = {"src/test/resources/Features/TC_02_Logout.feature"},
+        features = {"src/test/resources/Features"},
         glue= {"StepDefinitions"}, 
-        //tags = "@AllScenarios", 
+        tags = "@AllScenarios", 
         //dryRun = true, 
         monochrome = true,
         plugin = {"pretty", "json:target/cucumber.json",
