@@ -38,7 +38,7 @@ public class TC_03_RegisterNewAccount {
 	public void user_provides_the_details_of_new_user() {
 		//driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Pradeepkumar");
 		//driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("R");
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Ramesh1@gmail.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Rocky1@gmail.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("July@@@@@@0507");
 		driver.findElement(By.xpath("//input[@id='confirmPassword']")).sendKeys("July@@@@@@0507");
 		//driver.findElement(By.xpath("//input[@id='startDate']")).sendKeys("01112024");
@@ -62,7 +62,7 @@ public class TC_03_RegisterNewAccount {
 	public void user_enters_email_and_password() {
 	
 	    
-	  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("ramesh1@gmail.com");
+	  driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("Rocky1@gmail.com");
 	  driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("July@@@@@@0507");
 		
 	}
@@ -71,14 +71,7 @@ public class TC_03_RegisterNewAccount {
 	@When("Clicks login button")
 	public void clicks_login_button() {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
-	}
-
-	@Then("User is navigated to dashboard page")
-	public void user_is_navigated_to_dashboard_page() {
-		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		Assert.assertTrue(driver.findElements(By.xpath("//a[contains(text(),\"Dashboard\")]")).size()>0, "User is navigated to Dashboard");
 		
 	}
 

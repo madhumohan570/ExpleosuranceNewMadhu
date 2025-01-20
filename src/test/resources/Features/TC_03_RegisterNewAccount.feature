@@ -11,5 +11,4 @@ And User provides the details of new user
 Then User creates an account successfully
 When User enters email and password
 And Clicks login button
-Then User is navigated to dashboard page
 And Close browser

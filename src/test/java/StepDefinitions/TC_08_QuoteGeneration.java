@@ -56,13 +56,10 @@ public class TC_08_QuoteGeneration {
 		public void user_can_able_to_generate_the_quote() {
 			
 			driver.findElement(By.xpath("//a[contains(text(),\"Quate Generation\")]")).click();
-			driver.findElement(By.name("policyType")).click();
-			driver.findElement(By.xpath("//option[@value=\"Health\"]")).click();
-			//driver.findElement(By.xpath("//option[@value=\"Life\"]")).click();
-			//driver.findElement(By.xpath("//option[@value=\"Auto\"]")).click();
-			//driver.findElement(By.xpath("//option[@value=\"Home\"]")).click();
-			driver.findElement(By.name("coverageAmount")).sendKeys("100000");
-			driver.findElement(By.name("customerAge")).sendKeys("24");
+			driver.findElement(By.name("annualIncome")).sendKeys("100000");
+			driver.findElement(By.name("existingDebts")).sendKeys("1000");
+			driver.findElement(By.name("futureExpenses")).sendKeys("1000");
+			driver.findElement(By.name("finalExpenses")).sendKeys("10000");
 			driver.findElement(By.xpath("//button[contains(text(),\"Generate Quote\")]")).click();
 			
 			
