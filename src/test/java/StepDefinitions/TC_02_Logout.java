@@ -3,6 +3,7 @@ package StepDefinitions;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -51,6 +52,8 @@ public class TC_02_Logout {
 	
 	@Then("User can able to logout")
 	public void user_can_able_to_logout() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 500);");
 		driver.findElement(By.xpath("//button[contains(text(),\"Logout\")]")).click();
 		if (driver.getPageSource().contains("Sign in")) {
 			System.out.println("Logout is done successfully");
